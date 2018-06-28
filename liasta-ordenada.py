@@ -41,14 +41,19 @@ class lista_ordenada:
 		return None
 
 	def eliminar(self,dato):								#ELIMINA UN CONTACTO POR DATO
+		if self.head == None:
+			return
+
 		aux = self.head
-		prev = None
-		while aux:
-			if aux.getNombre() == dato or aux.getApellido() == dato or aux.getTelefono() == dato or aux.getMail() == dato:
-				if aux == self.head:
-					self.head = aux.getNext()
-				else:
-					prev.setNext(aux.getNext())
+		prev = aux
+
+		if aux.getApellido() == dato:
+			self.head = aux.getNext()
+
+		while aux != None:
+			if aux.getApellido() == dato:
+				prev.setNext(aux.getNext())
+				return
 			else:
 				prev = aux
 				aux = aux.getNext()
@@ -56,8 +61,17 @@ class lista_ordenada:
 	def imprimir(self):
 		aux = self.head
 		while aux:
-			print(aux.getNombre())
-			print(aux.getApellido())
-			print(aux.getTelefono())
-			print(aux.getMail())
+			aux.mostrar()
 			aux = aux.getNext()
+	def getHead(self):
+		return self.head
+
+# temp = lista_ordenada()
+# temp.agregar("a","a",123123,"hola@gogel.com")
+# temp.agregar("b","b",123123,"hola@gogel.com")
+# temp.agregar("c","c",123123,"hola@gogel.com")
+# temp.agregar("d","d",123123,"hola@gogel.com")
+# temp.imprimir()
+# temp.eliminar("c")
+# print("---------------")
+# temp.imprimir()

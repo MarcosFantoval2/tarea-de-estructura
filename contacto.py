@@ -5,6 +5,8 @@ class contacto:
         self.telefono = n_telefono
         self.mail = n_mail
         self.next = None
+        self.left = None
+        self.right = None
  
     def getNombre(self):            #GETS DEL NODO
         return self.nombre
@@ -19,7 +21,13 @@ class contacto:
         return self.mail
  
     def getNext(self):
-        return self.next   
+        return self.next
+
+    def getLeft(self):
+        return self.left 
+
+    def getRight(self):
+        return self.right
  
     def setNombre(self,dato):       #SETS DEL NODO
         self.nombre = dato
@@ -35,3 +43,21 @@ class contacto:
  
     def setNext(self,dato):
         self.next = dato
+
+    def setLeft(self,dato):
+        self.left = dato
+
+    def setRight(self,dato):
+        self.right = dato
+
+    def setVacioIzq(self):
+        self.left = None
+
+    def setVacioDer(self):
+        self.right = None
+
+    def mostrar(self):
+        print(self.nombre)
+        print(self.apellido)
+        print(self.telefono)
+        print(self.mail)
