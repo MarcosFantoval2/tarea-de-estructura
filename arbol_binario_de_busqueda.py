@@ -1,6 +1,6 @@
 import os
 from contacto import *
-from lista_ordenada import *
+from lista_ordenada import lista_ordenada
 
 class arbol_binario_de_busqueda():
     def __init__(self):
@@ -71,7 +71,7 @@ class arbol_binario_de_busqueda():
         self.root = None
         aux = cadena.getHead()
         while aux != None:
-            print aux.getTelefono()
+            print (aux.getTelefono())
             self.insertar(aux.getNombre(),aux.getApellido(),aux.getTelefono(),aux.getMail())
             aux = aux.getNext()
             

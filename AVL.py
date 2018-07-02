@@ -10,7 +10,7 @@ class arbol_avl():
         self.balance = 0
 
     def getAltura(self):
-        if self.head: 
+        if self.root: 
             return self.root.altura
         else: 
             return 0 
